@@ -20,8 +20,6 @@
 #include "main.h"
 #include "string.h"
 
-
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -175,7 +173,7 @@ int main(void)
 
 
 
-	  /* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
