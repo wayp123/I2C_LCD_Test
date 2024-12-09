@@ -144,12 +144,22 @@ int main(void)
   I2C_LCD_PrintCustomChar(MyI2C_LCD, 1);
   I2C_LCD_PrintCustomChar(MyI2C_LCD, 0);
 
+	I2C_LCD_SetCursor(MyI2C_LCD, 0, 2);
+	I2C_LCD_WriteString(MyI2C_LCD, "DeepBlueMbedded");
+	I2C_LCD_SetCursor(MyI2C_LCD, 0, 3);
+	I2C_LCD_WriteString(MyI2C_LCD, "I2C LCD ");
+	I2C_LCD_PrintCustomChar(MyI2C_LCD, 1);
+	I2C_LCD_PrintCustomChar(MyI2C_LCD, 0);
+
+	//still to do, DMA
+	//check if HAL delay and other delays block RTOS, else use Timer delays
+	//SCL PB8
+	//SDA PB9
+	//uses part
+	//1st run will see some backlight flashing, means connected, contrast adjust needed else will see nothing.
 
 
-
-
-
-  /* USER CODE END 2 */
+	/* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -170,8 +180,6 @@ int main(void)
 		I2C_LCD_NoCursor(MyI2C_LCD);	HAL_Delay(1000);
 		I2C_LCD_NoDisplay(MyI2C_LCD);	HAL_Delay(1000);
 		I2C_LCD_Display(MyI2C_LCD);		HAL_Delay(1000);
-
-
 
     /* USER CODE END WHILE */
 
