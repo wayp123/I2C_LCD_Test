@@ -151,11 +151,12 @@ int main(void)
 	I2C_LCD_PrintCustomChar(MyI2C_LCD, 1);
 	I2C_LCD_PrintCustomChar(MyI2C_LCD, 0);
 
-	//still to do, DMA
-	//check if HAL delay and other delays block RTOS, else use Timer delays
+	//still to do, DMA?, No because display needs 52us delays between nibble writes, but could breakup I2C_LCD_WriteString
+	//if HAL delay (use sleep in Task) and other delays block RTOS, use Timer delays?
+	//DELAY_US/MS uses SysTick for accurate time, but blocks, don't use in interrupts.
+	//HAL also uses SysTick
 	//SCL PB8
 	//SDA PB9
-	//uses part
 	//1st run will see some backlight flashing, means connected, contrast adjust needed else will see nothing.
 
 

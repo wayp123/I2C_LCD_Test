@@ -85,7 +85,7 @@ static void I2C_LCD_EnPulse(uint8_t I2C_LCD_InstanceIndex, uint8_t DATA)
 static void I2C_LCD_Write4Bits(uint8_t I2C_LCD_InstanceIndex, uint8_t Val)
 {
 	I2C_LCD_ExpanderWrite(I2C_LCD_InstanceIndex, Val);
-	I2C_LCD_EnPulse(I2C_LCD_InstanceIndex, Val);
+	I2C_LCD_EnPulse(I2C_LCD_InstanceIndex, Val); //delay 52us
 }
 
 static void I2C_LCD_Send(uint8_t I2C_LCD_InstanceIndex, uint8_t Val, uint8_t Mode)
