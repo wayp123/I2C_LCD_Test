@@ -62,8 +62,8 @@ all: main-build
 main-build: I2C_LCD_Test.elf secondary-outputs
 
 # Tool invocations
-I2C_LCD_Test.elf I2C_LCD_Test.map: $(OBJS) $(USER_OBJS) D:\Users\wayp\STM32CubeIDE\workspace_1.12.0\I2C_LCD_Test\STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "I2C_LCD_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Users\wayp\STM32CubeIDE\workspace_1.12.0\I2C_LCD_Test\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_LCD_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+I2C_LCD_Test.elf I2C_LCD_Test.map: $(OBJS) $(USER_OBJS) C:\Users\paul.way\STM32CubeIDE\workspace_1.10.0\I2C_LCD_Test\STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "I2C_LCD_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\paul.way\STM32CubeIDE\workspace_1.10.0\I2C_LCD_Test\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_LCD_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
